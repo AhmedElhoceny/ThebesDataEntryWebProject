@@ -1,0 +1,38 @@
+﻿@model ThebesDataEntryWebProject.Models.Person
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="~/Style/style.css">
+</head>
+
+<body style=" background-image: url('./Image/pexels-fauxels-3184306.jpg');
+        height: 1700px;">
+    <a asp-action="LogIn" asp-controller="Home">LogIn</a>
+    <form class="dataEntry" method="post" asp-action="DataEntryPost" asp-controller="Home" enctype="multipart/form-data">
+        <input required type="text" placeholder="الاسم كامل" name="Person_Name">
+        <input required type="text" placeholder="الجنسية" name="Person_Nationality">
+        <input required type="text" placeholder="الرقم القومي" name="Person_NationalID">
+        <input required type="text" placeholder="محل الاقامة" name="Person_Address">
+        <input required type="text" placeholder="هاتف المنزل" name="Person_TelephoneNumber">
+        <input required type="text" placeholder="المحمول" name="Person_PhoneNumber">
+        <input required type="email" placeholder="البريد الالكتروني" name="Person_Email">
+        <input required type="text" placeholder="سنة التخرج" name="Person_GraduationDate">
+        <input required type="text" placeholder="القسم" name="Person_Department">
+        <input required type="text" placeholder="الشعبة" name="Person_Division">
+        <input required type="text" placeholder="التقدير" name="Person_Grad">
+        <input required type="text" placeholder="الوظيفة الحالية" name="Person_PresentJob">
+        <label>CV السيرة الذاتية</label>
+        <input type="file" name="Person_CV">
+        <button type="submit">Send Data</button>
+    </form>
+</body>
+
+</html>

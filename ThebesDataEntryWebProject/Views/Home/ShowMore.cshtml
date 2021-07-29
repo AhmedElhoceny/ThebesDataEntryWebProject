@@ -1,0 +1,38 @@
+﻿@model ThebesDataEntryWebProject.Models.Person
+
+@{
+    ViewData["Title"] = "ShowMore";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="~/Style/style.css">
+</head>
+
+<body class="BodyControll" style="justify-content: center">
+    <div class="DetailsContainer">
+        <p>الاسم كامل : @(Model.Person_Name)</p>
+        <p>الجنسية : @Model.Person_Nationality</p>
+        <p>الرقم القومي : @Model.Person_NationalID</p>
+        <p>محل الاقامة : @Model.Person_Address</p>
+        <p>هاتف المنزل : @Model.Person_TelephoneNumber</p>
+        <p>المحمول : @Model.Person_PhoneNumber</p>
+        <p>البريد الالكتروني : @Model.Person_Email</p>
+        <p>سنة التخرج : @Model.Person_GraduationDate</p>
+        <p>القسم : @Model.Person_Department</p>
+        <p>الشعبة : @Model.Person_Division</p>
+        <p>التقدير : @Model.Person_Grad</p>
+        <p>الوظيفة الحالية : @Model.Person_PresentJob</p>
+        @if (Model.Person_CV_Destination != null)
+        {
+            <a style="align-self:end" href="~/CVs/@(Model.Person_CV_Destination)" download="w3logo">
+                <img src="/Image/cv.png" alt="DownloadCV" width="104" height="142">
+            </a>
+        }
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="~/Style/style.css">
+    <title>LogIn</title>
+</head>
+
+<body style="
+        height: 750px;">
+    <a href="DataEntryPage.html">LogOut</a>
+
+    <form class="LogIn" style="z-index:2" method="post" asp-action="LogInPost" asp-controller="Home">
+        <input required type="email" placeholder="Email" name="Email">
+        <input required type="password" placeholder="PassWord" name="Password">
+        <button type="submit">LogIn</button>
+    </form>
+    <img style="position:absolute ; width:100% ; height:750px ; top:0px" src="~/Image/pexels-christina-morillo-1181208.jpg" />
+</body>
+
+</html>

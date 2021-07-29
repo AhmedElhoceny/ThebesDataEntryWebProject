@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ThebesDataEntryWebProject.Models.Person>
+
+@{
+    ViewData["Title"] = "ControllAction";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="~/Style/style.css">
+</head>
+
+<body class="BodyControll" style="justify-content: center">
+    <form asp-action="ControllAction" asp-controller="Home" method="POST" style="z-index:3;align-self: center; direction: rtl; margin-right: 50px;margin-bottom: 50px;">
+        <input type="text" name="SearchedName" placeholder="الاسم كامل" style="width: 288px; height: 40px; background-color: #3b3b38c4; text-align: start; color: #fff; font-size: 25px; font-weight: 584; border-radius: 1px; outline: 26px; border: 3px solid #fff; ">
+        <button type="submit" style="        width: 127px;
+        height: 44px;
+        font-size: 25px;
+        color: #fff;
+        background-color: rgba(23, 23, 23, 0.82);
+        border-radius: 20px;
+        cursor: pointer;
+        border: 2px solid #fff;">
+            Search
+        </button>
+    </form>
+
+    <div class="DataContainer" style="z-index: 3;">
+        @foreach (var MyData in Model)
+        {
+        <div>
+            <p>الاسم : @(MyData.Person_Name)</p>
+            <p>القسم : @(MyData.Person_Department)</p>
+            <a class="MoreData" asp-action="ShowMore" asp-controller="Home" asp-route-ID="@(MyData.Person_ID)"></a>
+            <a class="DeleteData" asp-action="DeletePerson" asp-controller="Home" asp-route-ID="@(MyData.Person_ID)"></a>
+        </div>
+        }
+
+    </div>
+
+</body>
+
+</html>
